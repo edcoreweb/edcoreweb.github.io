@@ -1,0 +1,14 @@
+1. Register classic
+	
+	HTTP --> TOKEN --> HEADER
+	POST	/user/register
+	POST	/user/login
+	POST	/user/location
+	POST	/user/interests	(keywords)
+	POST	/user/feed
+	POST	/user/socialnetwork/add		-id & -oauth
+	POST	/user/post/post_id/seen
+	POST	/user/post_id/swipe
+	GET		/recomandations
+	POST	/follow/user_id
+	DELETE 	/follow/user_id

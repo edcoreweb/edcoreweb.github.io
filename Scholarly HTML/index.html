@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width">
+        <title>Scholarly HTML — Markedly Smart</title>
+        <link rel="stylesheet" href="./Scholarly HTML/scholarly.css">
+        <link rel="stylesheet" href="./Scholarly HTML/prism-coy.css">
+        <script src="./Scholarly HTML/prism.js.download" defer=""></script>
+    </head>
+    <body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+        <header>
+            <p class="title">Scholarly HTML</p>
+            <p class="subtitle">Marvelious</p>
+        </header>
+        <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+            <h1 property="schema:name">Marvelious</h1>
+            <section>
+                <ol>
+                    <li property="schema:author" typeof="sa:ContributorRole">
+                        <a property="schema:author" href="https://github.com/edcoreweb/" typeof="schema:Person">
+                            <span property="schema:givenName">Eduard</span>
+                            <span property="schema:familyName">Tofan</span>
+                        </a>
+                        <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                            <a property="schema:email" href="mailto:edcoreweb@gmail.com" title="corresponding author">✉</a>
+                        </sup>
+                    </li>
+                    <li property="schema:contributor" typeof="sa:ContributorRole">
+                        <a property="schema:contributor" href="https://github.com/adrianMunteanu/" typeof="schema:Person">
+                            <span property="schema:givenName">Adrian</span>
+                            <span property="schema:familyName">Munteanu</span>
+                        </a>
+                        <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                            <a property="schema:email" href="mailto:adrian.munteanu@info.uaic.ro" title="corresponding author">✉</a>
+                        </sup>
+                    </li>
+                </ol>
+                <ol>
+                    <li id="institution">
+                        <a href="https://www.info.uaic.ro/bin/Main/" typeof="schema:Corporation">
+                            <span property="schema:name">"Alexandru Ioan Cuza" University, Iasi, Faculty of Computer Science</span>
+                        </a>
+                    </li>
+                </ol>
+            </section>
+            <section typeof="sa:Abstract" id="abstract">
+                <h2>Abstract</h2>
+                <p>
+                    <a href="https://github.com/adrianMunteanu/Marvelious/" property="schema:name"> Marvelious</a> proposes
+                    to provide an interesting means of complex visualization and faceted navigation &amp; search
+                    concerning the data about comics characters provided by Marvel Comics API.
+                </p>
+            </section>
+            <section typeof="sa:MaterialsAndMethods" id="motivation">
+                <h2>Motivation</h2>
+                <p>
+                    The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe that is centered on a series of superhero films,
+                    independently produced by Marvel Studios and based on characters that appear in American comic books published by Marvel Comics.
+                    The franchise has expanded to include comic books, short films, television series, and digital series.
+                    The shared universe, much like the original Marvel Universe in comic books, was established by crossing over common plot elements,
+                    settings, cast, and characters. Phil Coulson, portrayed by Clark Gregg, is an original character to the MCU and the only character
+                    to appear across all the different media of the MCU.
+                </p>
+                <p>
+                    The MCU increased interest in Marvel comic books and characters, and as a result created an opportunity for a app to be built such that,
+                    it would provide a gateway for new fans of the Marvel properties.
+                </p>
+            </section>
+
+            <section typeof="sa:MaterialsAndMethods" id="interaction">
+                <h2>Interaction design patterns used</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Carousel Pattern
+                        </p>
+                        <p>
+                            The user needs to browse through a set of items and possibly select one of them.
+                        </p>
+                        <p>
+                            This pattern is used throughout the web app idea, mostly in "popular" or "recommended" sections of a certain page
+                            be it comic or events. This informs the user that there are more items available then what is currently seen on the scree.
+                            At the same time only a few items are shown at a time, such that the user doesn't become confused by the sheer amount of
+                            items available
+                        </p>
+                        <p></p>
+                    </li>
+                    <li>
+                        <p>
+                            Gamification
+                        </p>
+                        <p>
+                            Gamification is the application of game-design elements and game principles in non-game contexts.
+                        </p>
+                        <p>
+                            The pattern is mostly used on the Mobile app idea, where gaining a new character and adding it to your collection
+                            requires the completion of a physical "fetch quest". At the end of the route the user is rewarded with the character and
+                            new characters become available.
+                        </p>
+                        <p></p>
+                    </li>
+                    <li>
+                        <p>
+                            Completion
+                        </p>
+                        <p>
+                            Provide a feeling of closure by rewarding users at the completion of a goal.
+                        </p>
+                        <p>
+                            As with the Gamification pattern, the Completion pattern is also used on the Mobile app Idea.
+                            When the user collects a new character, new ones are unlocked, and become available for collection, offering the user
+                            an incentive to find all the related characters and complete a collection.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Notifications
+                        </p>
+                        <p>
+                            The user wants to be informed about important updates and messages
+                        </p>
+                        <p>
+                            In the Mobile app design the user can receive a notification nearby characters, relative to his location.
+                            Once opened, the app can plot a course to the character so it can be collected.
+                        </p>
+                        <p></p>
+                    </li>
+                </ul>
+            </section>
+            <section typeof="sa:ReferenceList" id="references">
+                <h2>References</h2>
+                <dl>
+                    <dt>Human-Computer Interaction</dt>
+                    <dd id="ref-nyt" typeof="schema:ScholarlyArticle" resource="https://profs.info.uaic.ro/~busaco/teach/courses/hci/">
+                        <cite property="schema:name"><a href="https://profs.info.uaic.ro/~busaco/teach/courses/hci">
+                            Human-Computer Interaction Course</a></cite>,
+                        by
+                        <span property="schema:author" typeof="schema:Person">
+                   <span property="schema:name">Dr. Sabin Buraga</span>
+                 </span>
+                    </dd>
+                </dl>
+            </section>
+        </article>
+    </body>
+</html>

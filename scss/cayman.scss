@@ -65,9 +65,9 @@ a {
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 1);
   background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 1);
   border-style: solid;
   border-width: 1px;
   border-radius: 0.3rem;
@@ -110,7 +110,8 @@ a {
   color: $header-heading-color;
   text-align: center;
   background-color: $header-bg-color;
-  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url(https://i.redditmedia.com/DYDJhOuVIMiKgmCn065l-pLdi9RPKwUHxIZ_fNf3_VA.jpg?s=c38709a…);
+  background-size: cover;  
 
   @include large {
     padding: 5rem 6rem;
@@ -145,7 +146,7 @@ a {
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
-  opacity: 0.7;
+  opacity: 1;
 
   @include large {
     font-size: 1.25rem;

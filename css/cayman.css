@@ -53,7 +53,7 @@ a {
   color: #fff;
   text-align: center;
   background-color: #159957;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url(https://i.redditmedia.com/DYDJhOuVIMiKgmCn065l-pLdi9RPKwUHxIZ_fNf3_VA.jpg?s=c38709a…);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://edcoreweb.github.io/DYDJhOuVIMiKgmCn065l-pLdi9RPKwUHxIZ_fNf3_VA.jpg');
     background-size: cover;
 }
   @media screen and (min-width: 64em) {

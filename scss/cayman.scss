@@ -110,7 +110,7 @@ a {
   color: $header-heading-color;
   text-align: center;
   background-color: $header-bg-color;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url(https://i.redditmedia.com/DYDJhOuVIMiKgmCn065l-pLdi9RPKwUHxIZ_fNf3_VA.jpg?s=c38709a…);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('https://i.redditmedia.com/DYDJhOuVIMiKgmCn065l-pLdi9RPKwUHxIZ_fNf3_VA.jpg?s=c38709a4e83e3c15b16c1dfb873c63d8');
   background-size: cover;  
 
   @include large {

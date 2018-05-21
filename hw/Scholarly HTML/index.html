@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width">
+        <title>Scholarly HTML — Markedly Smart</title>
+        <link rel="stylesheet" href="./scholarly.css">
+        <link rel="stylesheet" href="./prism-coy.css">
+        <script src="./prism.js.download" defer=""></script>
+    </head>
+    <body prefix="schema: http://schema.org/ xsd: http://www.w3.org/2001/XMLSchema# sa: https://ns.science.ai/">
+        <header>
+            <p class="title">Scholarly HTML</p>
+            <p class="subtitle">Data Visualisation</p>
+        </header>
+        <article id="what" typeof="schema:ScholarlyArticle" resource="#">
+            <h1 property="schema:name">Data Visualisation</h1>
+            <section>
+                <ol>
+                    <li property="schema:author" typeof="sa:ContributorRole">
+                        <a property="schema:author" href="https://github.com/edcoreweb/" typeof="schema:Person">
+                            <span property="schema:givenName">Eduard</span>
+                            <span property="schema:familyName">Tofan</span>
+                        </a>
+                        <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                            <a property="schema:email" href="mailto:edcoreweb@gmail.com" title="corresponding author">✉</a>
+                        </sup>
+                    </li>
+                </ol>
+                <ol>
+                    <li id="institution">
+                        <a href="https://www.info.uaic.ro/bin/Main/" typeof="schema:Corporation">
+                            <span property="schema:name">"Alexandru Ioan Cuza" University, Iasi, Faculty of Computer Science</span>
+                        </a>
+                    </li>
+                </ol>
+            </section>
+            <section typeof="sa:Abstract" id="abstract">
+                <h2>Abstract</h2>
+                <p>
+                    <a href="https://github.com/adrianMunteanu/Marvelious/" property="schema:name"> Data Visualisation</a> proposes
+                    to provide an interesting means of complex visualization of the meteor fall data set.
+                </p>
+            </section>
+            <section typeof="sa:MaterialsAndMethods" id="motivation">
+                <h2>Motivation</h2>
+                <p>
+                    This homework proposes to visualize in five ways the number of meteor falls in the last decade and to understand how these numbers
+                    evolve over time.
+                </p>
+            </section>
+
+            <section typeof="sa:MaterialsAndMethods" id="interaction0">
+                <h2>Line chart</h2>
+                <p>A line graph provides a means in which to compare two different types of information through showing how they are similar and how they are differ. This is performed through the use two lines each representing the two aforementioned pieces of information which are then charted along a numerical scale.</p>
+                <img src="./img/line.png" width="100%" alt="">
+            </section>
+
+            <section typeof="sa:MaterialsAndMethods" id="interaction2">
+                <h2>Bar chart</h2>
+                <p>
+                    A bar graph is very similar to a line graph in the sense that it is designed to show different values of two or more subjects but instead of using lines it using horizontal and vertical bars that represent a different value. There are numbers along the side of a bar graph and they are scales identical to what would be found on a line graph. In a way, this type of graph is somewhat easier to read than a line graph and it conveys informational equally as well.
+                </p>
+                <img src="./img/bar.png" width="100%" alt="">
+            </section>
+
+            <section typeof="sa:MaterialsAndMethods" id="interaction">
+                <h2>Pie chart</h2>
+                <p>
+                    The pie chart serves the same purpose of a line graph and a bar graph in the sense it is designed to show differences between two separate subjects although it eschews the common linear style found in the two other graphs. A pie chart is a very common type of graph that is in the shape of a circle with the circle representing a collective of 100%. Then, within the circle smaller percentage portions within the 100% will be presented in different colors. Sometimes the shapes look like slices taken out of a pie and this is where it gets the nickname of a pie chart
+                </p>
+                <img src="./img/download.png" width="100%" alt="">
+            </section>
+
+            <section typeof="sa:MaterialsAndMethods" id="interaction11">
+                <h2>Polar chart</h2>
+                <p>
+                    A radar chart or a polar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
+                </p>
+                <img src="./img/polar.png" width="100%" alt="">
+            </section>
+            <section typeof="sa:ReferenceList" id="references">
+                <h2>References</h2>
+                <dl>
+                    <dt>Human-Computer Interaction</dt>
+                    <dd id="ref-nyt" typeof="schema:ScholarlyArticle" resource="https://profs.info.uaic.ro/~busaco/teach/courses/hci/">
+                        <cite property="schema:name"><a href="https://profs.info.uaic.ro/~busaco/teach/courses/hci">
+                            Human-Computer Interaction Course</a></cite>,
+                        by
+                        <span property="schema:author" typeof="schema:Person">
+                   <span property="schema:name">Dr. Sabin Buraga</span>
+                 </span>
+                    </dd>
+                </dl>
+            </section>
+        </article>
+    </body>
+</html>

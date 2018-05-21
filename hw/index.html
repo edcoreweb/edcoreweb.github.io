@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hci</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js"></script>
+    </head>
+    <body>
+
+        <!-- As a link -->
+        <nav class="navbar navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Hci homework</a>
+            </div>
+        </nav>
+
+
+        <style>
+            hr {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+        </style>
+
+        <div class="container">
+
+            <br>
+            <br>
+            <h3 class="text-center">Meteor data</h3>
+            <p class="text-center">
+                Used the open source library <a href="https://www.chartjs.org/">ChartJs</a> and meteor fall nasa <a href="https://data.nasa.gov/resource/y77d-th95.json">data source</a>.
+            </p>
+            <hr>
+
+            <div class="row">
+                <div class="col-6">
+                    <canvas id="pie"></canvas>
+                </div>
+                <div class="col-6">
+                    <canvas id="pie2"></canvas>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <canvas id="line"></canvas>
+                </div>
+                <div class="col-6">
+                    <canvas id="bar"></canvas>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <canvas id="polar"></canvas>
+                </div>
+                <div class="col-6"></div>
+                <div class="col-6"></div>
+            </div>
+        </div>
+
+        <br><br>
+
+
+
+        <script>
+            let meteorData =
+                axios.get('https://data.nasa.gov/resource/y77d-th95.json').then(r => {
+                    meteorData = r.data;
+                    window.dispatchEvent(new Event('loaded'));
+                });
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            window.addEventListener('loaded', e => {
+                // For a pie chart
+                let data = _.groupBy(meteorData, e => e.fall);
+                new Chart(document.getElementById('pie').getContext('2d'), {
+                    type: 'pie',
+                    data: {
+                        datasets: [{
+                            data: Object.values(data).map(e => e.length),
+                            backgroundColor: ["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"]
+                        }],
+
+                        // These labels appear in the legend and in the tooltips when hovering different arcs
+                        labels: Object.keys(data)
+                    },
+                });
+
+                let group = _.groupBy(meteorData, e => new Date(e.year).getFullYear());
+                data = Object.keys(group).filter(e => !isNaN(e) && e > 1999);
+
+                new Chart(document.getElementById("line"), {
+                    "type": "line",
+                    "data": {
+                        "labels": data,
+                        "datasets": [
+                            {
+                                "label": "Number of meteor falls since 2000",
+                                "data": data.map(e => group[e].length),
+                                "fill": false,
+                                "borderColor": "rgb(75, 192, 192)",
+                                "lineTension": 0.1
+                            }
+                        ]
+                    },
+                    "options": {}
+                });
+
+                new Chart(document.getElementById('pie2').getContext('2d'), {
+                    type: 'pie',
+                    data: {
+                        datasets: [{
+                            data: data.map(e => group[e].length),
+                            backgroundColor: data.map(e => getRandomColor())
+                        }],
+
+                        // These labels appear in the legend and in the tooltips when hovering different arcs
+                        labels: data
+                    },
+                });
+
+                new Chart(document.getElementById('polar').getContext('2d'), {
+                    type: 'polarArea',
+                    data: {
+                        datasets: [{
+                            data: data.map(e => group[e].length),
+                            backgroundColor: data.map(e => getRandomColor())
+                        }],
+
+                        // These labels appear in the legend and in the tooltips when hovering different arcs
+                        labels: data
+                    },
+                });
+
+                new Chart(document.getElementById("bar"),
+                    {"type":"bar","data":{"labels":data,"datasets":[{"label":"Number of meteor falls since 2000","data":data.map(e => group[e].length),"fill":false,"backgroundColor":data.map(e => getRandomColor()),"borderWidth":1}]},"options":{"scales":{"yAxes":[{"ticks":{"beginAtZero":true}}]}}});
+
+
+
+            });
+        </script>
+
+    </body>
+</html>
